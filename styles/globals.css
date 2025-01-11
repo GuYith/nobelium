@@ -46,7 +46,7 @@ body::-webkit-scrollbar {
 }
 body {
   scrollbar-width: thin;
-  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  /* scrollbar-color: var(--thumbBG) var(--scrollbarBG); */
 }
 body::-webkit-scrollbar-track {
   background: var(--scrollbarBG);
@@ -108,7 +108,14 @@ nav {
 }
 
 .tag-container ul::-webkit-scrollbar {
-  width: 0 !important;
+  width: 5px !important;
+  height: 10px !important;
+  background-color: var(--scrollbarBG);
+}
+
+.tag-container ul::-webkit-scrollbar-thumb{
+  border-radius: 10px !important;
+  background-color: var(--thumbBG) !important;
 }
 
 .tag-container ul {
@@ -119,6 +126,7 @@ nav {
   -ms-user-select: none;
   -khtml-user-select: none;
   user-select: none;
+  padding-bottom: 10px;
 }
 
 @media (min-width: 768px) {
