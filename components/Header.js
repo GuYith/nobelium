@@ -39,9 +39,9 @@ const NavBar = () => {
             type="button"
           >
             {appearance === "light" ? (
-              <MoonIcon className="w-4 h-4 text-day group-hover:text-night" />
+              <MoonIcon className="w-4 h-4 text-day hover:text-night" />
             ) : (
-              <SunIcon className="w-4 h-4 text-night group-hover:text-day" />
+              <SunIcon className="w-4 h-4 text-night hover:text-day" />
             )}
           </button>
         </li>
