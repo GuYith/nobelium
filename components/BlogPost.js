@@ -27,7 +27,7 @@ const BlogPost = ({ post }) => {
               <FormattedDate date={post.date} />
           </time>
         </div>
-          <img src={post.pageCover} className="ml-3 min-w-56 max-w-56 h-36 object-cover"></img>
+          <img src={post.pageCover} className="ml-3 min-w-56 w-56 max-w-56 h-36 object-cover"></img>
       </article>
       :
       <article key={post.id} className="mb-6 md:mb-8 hover:-ml-8 hover:mr-8">
