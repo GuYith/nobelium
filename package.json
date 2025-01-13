@@ -20,6 +20,7 @@
     "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@notionhq/client": "^2.2.15",
     "axios": "^1.6.1",
     "canvas": "^2.11.2",

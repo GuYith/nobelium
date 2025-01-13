@@ -1,4 +1,5 @@
 import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
+import { MoonIcon, SunIcon } from "@heroicons/react/20/solid";
 import Link from 'next/link'
 import Image from 'next/image'
 import { useConfig } from '@/lib/config'
@@ -7,6 +8,7 @@ import useTheme from '@/lib/theme'
 
 const NavBar = () => {
   const BLOG = useConfig()
+  const { appearance, setAppearance} = BLOG
   const locale = useLocale()
   const links = [
     { id: 0, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
@@ -29,6 +31,20 @@ const NavBar = () => {
               </li>
             )
         )}
+        <li className="ml-4">
+          <button
+            className="group  block p-1 bg-night hover:bg-day dark:bg-day dark:hover:bg-night rounded-full transition-all duration-300"
+            onClick={() => setAppearance(appearance === "light" ? "dark" : "light")}
+            aria-label="toggle Dark Mode"
+            type="button"
+          >
+            {appearance === "light" ? (
+              <MoonIcon className="w-4 h-4 text-day group-hover:text-night" />
+            ) : (
+              <SunIcon className="w-4 h-4 text-night group-hover:text-day" />
+            )}
+          </button>
+        </li>
       </ul>
     </div>
   )
