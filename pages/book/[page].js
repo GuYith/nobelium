@@ -39,15 +39,9 @@ export async function getStaticProps (context) {
 }
 
 export async function getStaticPaths () {
-  const books = await getAllBooks({})
-  const totalBooks = books.length
-  const totalPages = Math.ceil(totalBooks / config.bookPerPage)
   return {
-    // remove first page, we 're not gonna handle that.
-    paths: Array.from({ length: totalPages - 1 }, (_, i) => ({
-      params: { page: '' + (i + 2) }
-    })),
-    fallback: true
+    paths: [],
+    fallback: 'blocking'
   }
 }
 export default Page

@@ -8,8 +8,7 @@ import BookPagination from '@/components/BookPagination'
 export async function getStaticProps () {
   const books = await getAllBooks({})
   const booksToShow = books.slice(0, clientConfig.bookPerPage)
-  // const totalPosts = posts.length
-  const showNext = true
+  const showNext = books.length > clientConfig.bookPerPage
   return {
     props: {
       page: 1, // current page is 1
@@ -34,6 +33,5 @@ export default function BookList ({ booksToShow, page, showNext }) {
     </Container>
   )
 }
-
 
 

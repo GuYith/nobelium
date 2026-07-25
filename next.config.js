@@ -18,7 +18,13 @@ module.exports = {
       }
     ]
   },
-  transpilePackages: ['dayjs']
+  transpilePackages: ['dayjs'],
+  webpack: config => {
+    // pdfjs uses canvas only for Node-side rendering. Nobelium renders PDFs
+    // in the browser, so bundling the native canvas module is unnecessary.
+    config.resolve.alias.canvas = false
+    return config
+  }
   // webpack: (config, { dev, isServer }) => {
   //   // Replace React with Preact only in client production build
   //   if (!dev && !isServer) {
